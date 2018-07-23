@@ -1,3 +1,5 @@
+//https://secret-hollows-37107.herokuapp.com/
+
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
@@ -95,6 +97,16 @@ app.get('/about', (req, res) => {
   //this gets static page rendering
   //res.render('about.hbs')
 });
+
+
+app.get('/projects', (req, res) => {
+  //res.send('About page');
+  res.render('projects.hbs', {
+    pageTitle: 'Projects page',
+    //currentYear: new Date().getFullYear()
+  });
+});
+
 
 app.get('/bad', (req, res) => {
   res.send({
